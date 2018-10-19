@@ -1,5 +1,5 @@
 from flask import jsonify, request, abort, Response
-from flight import appw
+from flight import app
 from datetime import datetime
 import json
 
@@ -8,6 +8,6 @@ def index():
     return jsonify({ 'hello': 'world' })
 
 @app.route('/flight', methods=['GET'])
-def flights():
+def flight():
     return jsonify({ 'hello': 'world' })
 
