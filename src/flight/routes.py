@@ -41,6 +41,39 @@ def flight(country, currency, locale, originPlace, destinationPlace, inboundDate
         data = getData(originPlace,destinationPlace,inboundDate,int(adults),int(children),int(infants),cabinClass,int(minLayover))
         return jsonify(data)
 
+@app.route('/<originPlace>/<inboundDate>/<destinationPlace>/<layover>/<adults>/<children>/<infants>/<cabinClass>', methods=['GET'])
+def fly(originPlace, inboundDate, destinationPlace, layover, adults, children, infants, cabinClass):
+    # originPlace = originPlace.lower()
+    # destinationPlace = destinationPlace.lower()
+    layover = layover * 60
+    if 0 <= int(children) >= 16:
+        return jsonify({ 'error': 'Incorrect children attributes' })
+    if 0 <= int(infants) >= 16:
+        return jsonify({ 'error': 'Incorrect infants attributes' })
+    cabinClass = cabinClass.lower()
+    cabinClass = cabinClass.replace(" class", "")
+    if cabinClass not in ['economy', "premiumeconomy", "business", "first"]:
+        return jsonify({ 'error': 'Incorrect cabinClass attributes' })
+    data = getData(originPlace,destinationPlace,inboundDate,int(adults),int(children),int(infants),cabinClass,int(layover))
+    return jsonify(data)
+
+@app.route('/<originPlace>/<month>/<day>/<year>/<destinationPlace>/<layover>/<adults>/<children>/<infants>/<cabinClass>', methods=['GET'])
+def price(originPlace, month, day, year, destinationPlace, layover, adults, children, infants, cabinClass):
+    # originPlace = originPlace.lower()
+    # destinationPlace = destinationPlace.lower()
+    layover = layover * 60
+    inboundDate = year + '-' + month + '-' + day
+    if 0 <= int(children) >= 16:
+        return jsonify({ 'error': 'Incorrect children attributes' })
+    if 0 <= int(infants) >= 16:
+        return jsonify({ 'error': 'Incorrect infants attributes' })
+    cabinClass = cabinClass.lower()
+    cabinClass = cabinClass.replace(" class", "")
+    if cabinClass not in ['economy', "premiumeconomy", "business", "first"]:
+        return jsonify({ 'error': 'Incorrect cabinClass attributes' })
+    data = getData(originPlace,destinationPlace,inboundDate,int(adults),int(children),int(infants),cabinClass,int(layover))
+    return jsonify(data)
+
 @app.route('/weather/<airport>/<date>', methods=['GET'])
 def weather(date, airport):
 	return jsonify(getWeather(date, airport))
@@ -61,6 +94,5 @@ def suggest(country, currency, locale):
 def get_suggestions(country, currency, locale, query, api):
 	suggest = requests.get(url+"autosuggest/v1.0/"+country+"/"+currency+"/"+locale+"?query="+query+"&apiKey="+api)
 	suggestJSON = json.loads(suggest.text)
-	print(suggestJSON)
 	return [{'PlaceId':x['PlaceId'],'PlaceName':x['PlaceName']} for x in suggestJSON['Places']]
 
