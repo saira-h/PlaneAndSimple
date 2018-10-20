@@ -3,7 +3,7 @@ import time
 from time import strptime
 
 import requests
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 
 
 def getData(departFrom, arriveAt, flyOn, noOfPassengers, noOfChildren, noOfInfants, cabinClass, minLayover):
@@ -34,7 +34,12 @@ def getData(departFrom, arriveAt, flyOn, noOfPassengers, noOfChildren, noOfInfan
         if r.json().get("Status") != "UpdatesPending":
             break
 
-    return filterResults(r.json(), minLayover)
+    returnMap = filterResults(r.json(), minLayover)
+    returnMap["departFrom"] = departFrom
+    returnMap["arriveAt"] = arriveAt
+
+    return returnMap
+
 
 
 def filterResults(json, minLayover):
@@ -70,4 +75,31 @@ def filterResults(json, minLayover):
             if itinerary.get("OutboundLegId") == id:
                 applicableItineraries.append(itinerary)
 
-    print(applicableItineraries)
+    retunMap = {}
+    flightsInfo = []
+
+    for itinerary in applicableItineraries:
+        flightInfo = {}
+        for leg in legs:
+            if leg.get("Id") == itinerary.get("OutboundLegId"):
+                flightInfo["departureDate"] = leg.get("Departure")
+                flightInfo["arrivalDate"] = leg.get("Arrival")
+                for place in json.get("Places"):
+                    if leg.get("Stops")[0] == place.get("Id"):
+                        flightInfo["layoverAt"] = place.get("Name")
+                firstID = leg.get("SegmentIds")[0]
+                secondID = leg.get("SegmentIds")[1]
+                for segment in segments:
+                    if segment.get("Id") == firstID:
+                        layoverStart = time.mktime(strptime(segment.get("ArrivalDateTime"), "%Y-%m-%dT%X"))
+                    if segment.get("Id") == secondID:
+                        layoverEnd = time.mktime(strptime(segment.get("DepartureDateTime"), "%Y-%m-%dT%X"))
+                flightInfo["layoverLength"] = (layoverEnd - layoverStart) / 60
+                journeys.append([bothFlights, journey[1]])
+
+            flightInfo["bestPrice"] = itinerary.get("PricingOptions")[0].get("Price")
+            flightInfo["deeplinkUrl"] = itinerary.get("PricingOptions")[0].get("DeeplinkUrl")
+        flightsInfo.append(flightInfo)
+    retunMap["flightsInfo"] = flightsInfo
+
+    return retunMap
