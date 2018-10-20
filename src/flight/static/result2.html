@@ -21,38 +21,207 @@
     <!-- Custom styles for this template -->
     <link href="css/landing-page.min.css" rel="stylesheet">
 
-  </head>
 
-  <body background="backgroundImage.jpg">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-light bg-light static-top">
-      <div class="container">
-      </div>
-    </nav>
-
-    <!-- Masthead -->
     <header class="masthead text-white text-center">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
 
-            <h1 class="mb-5">InterPlane</h1>
-            <h2 class="mb-5">Take a little detour...</h2>
-
-          </div>
-          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-
+            <h1 class="mb-5">Layovers</h1>
           </div>
         </div>
       </div>
-    </header>
+</header>
+<LINK rel=stylesheet type "text/css" href="result2css.css">
+  </head>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <section>
+  <!--for demo wrap-->
+  <h1>Fixed Table header</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Company</th>
+          <th>Price</th>
+          <th>Change</th>
+          <th>Change %</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table>
+      <thead>
+        <tr class="table100-head">
+          <th class="departFrom">Depart from</th>
+          <th class="departureDate">Departure date</th>
+          <th class="arrivalAt">Arriving to</th>
+          <th class="arrivalDate">Arrival Date</th>
+          <th class="layoverAt">Layover destination</th>
+          <th class="layoverLength">Length of layover (hours)</th>
+          <th class="bestPrice">Price of ticket (£)</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td class="departFrom">Manchester</td>
+            <td class="departureDate">2019-01-06T20:30:00</td>
+            <td class="arrivalAt">Barcelona</td>
+            <td class="arrivalDate">2019-01-07T08:20:00</td>
+            <td class="layoverAt">London Heathrow</td>
+            <td class="layoverLength">9h 25m</td>
+            <td class="bestPrice"><a href = "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=Wa3rESSDeivD%2bgLXwmvBVxMjrxY4fRDbWgPSM81Xhyg%2b26qU8rMuHA%2bq9cLv1kvW&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fUK%2fen-GB%2fGBP%2fba__%2f1%2f9772.13880.2019-01-06%2fair%2fairli%2fflights%3fitinerary%3dflight%7c-32480%7c487%7c9772%7c2019-01-06T20%3a30%7c13554%7c2019-01-06T21%3a45%7c135%7cLLV2AO%7cL%7cPlus%3bflight%7c-32480%7c1370%7c13554%7c2019-01-07T07%3a10%7c13880%7c2019-01-07T08%3a20%7c70%7cOADDV2RO%7cO%7cPlus%26carriers%3d-32480%26operators%3d-32480%3b-32480%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dtrue%26ticket_price%3d190.09%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26deeplink_ids%3deu-central-1.prod_48e301d1eb86d5dc6972b7e1d0dc454a%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-10-20T19%3a05%3a00%26source_website_id%3damac">190.09</td>
+          </tr>
+          <tr>
+            <td class="departFrom">Manchester</td>
+            <td class="departureAt">2019-01-06T12:05:00</td>
+            <td class="arrivalAt">Barcelona</td>
+            <td class="arrivalDate">2019-01-07T10:40:00</td>
+            <td class="layoverAt">Paris Charles de Gaulle</td>
+            <td class="layoverLength">20h</td>
+            <td class="bestPrice"><a href = "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=Wa3rESSDeivD%2bgLXwmvBVxMjrxY4fRDbWgPSM81Xhyg%2b26qU8rMuHA%2bq9cLv1kvW&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fUK%2fen-GB%2fGBP%2fgtuk%2f1%2f9772.13880.2019-01-06%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32677%7c1349%7c9772%7c2019-01-06T12%3a05%7c10413%7c2019-01-06T14%3a05%7c120%7c-%7c-%7c-%3bflight%7c-32677%7c5028%7c10413%7c2019-01-07T10%3a10%7c13880%7c2019-01-07T10%3a40%7c90%7c-%7c-%7c-%26carriers%3d-32677%26operators%3d-31018%3b-32302%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d132.08%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26deeplink_ids%3deu-central-1.prod_df8b716c3a772511612fd9ebad976699%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-10-20T19%3a05%3a00">132.08</td>
+          </tr>
+          <tr>
+            <td class="departFrom">Manchester</td>
+            <td class="departureAt">2019-01-06T16:30:00</td>
+            <td class="arrivalAt">Barcelona</td>
+            <td class="arrivalDate">2019-01-07T11:45:00</td>
+            <td class="layoverAt">Oslo Gardermoen</td>
+            <td class="layoverLength">20h</td>
+            <td class="bestPrice"><a href = "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=Wa3rESSDeivD%2bgLXwmvBVxMjrxY4fRDbWgPSM81Xhyg%2b26qU8rMuHA%2bq9cLv1kvW&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fUK%2fen-GB%2fGBP%2fskyp%2f1%2f9772.13880.2019-01-06%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32013%7c5524%7c9772%7c2019-01-06T16%3a30%7c15093%7c2019-01-06T19%3a55%7c205%7c-%7c-%7c-%3bflight%7c-32013%7c1348%7c15093%7c2019-01-07T10%3a40%7c13880%7c2019-01-07T11%3a45%7c125%7c-%7c-%7c-%26carriers%3d-32013%26operators%3d-31303%3b-32013%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dtrue%26ticket_price%3d127.00%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26deeplink_ids%3deu-west-1.prod_a3b45db426fd5ee54f383a8e86c77c88%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-10-20T19%3a35%3a00">127.0</td>
+          </tr>
+          <tr>
+            <td class="departFrom">Manchester</td>
+            <td class="departureAt">2019-01-06T13:55:00</td>
+            <td class="arrivalAt">Barcelona</td>
+            <td class="arrivalDate">2019-01-07T10:10:00</td>
+            <td class="layoverAt">Istanbul Sabiha</td>
+            <td class="layoverLength">13h 25m</td>
+            <td class="bestPrice"><a href = "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=Wa3rESSDeivD%2bgLXwmvBVxMjrxY4fRDbWgPSM81Xhyg%2b26qU8rMuHA%2bq9cLv1kvW&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fUK%2fen-GB%2fGBP%2fgtuk%2f1%2f9772.13880.2019-01-06%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-31734%7c1836%7c9772%7c2019-01-06T13%3a55%7c16096%7c2019-01-06T19%3a20%7c205%7c-%7c-%7c-%3bflight%7c-31734%7c1993%7c12585%7c2019-01-07T08%3a45%7c13880%7c2019-01-07T10%3a10%7c265%7c-%7c-%7c-%26carriers%3d-31734%26operators%3d-31734%3b-31734%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d378.38%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26deeplink_ids%3deu-central-1.prod_52c4aa080077acb525729accc8602960%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-10-20T19%3a05%3a00">378.38</td>
+          </tr>
+          <tr>
+            <td class="departFrom">Manchester</td>
+            <td class="departureAt">2019-01-06T15:35:00</td>
+            <td class="arrivalAt">Barcelona</td>
+            <td class="arrivalDate">2019-01-07T11:55:00</td>
+            <td class="layoverAt">Vienna</td>
+            <td class="layoverLength">16h 10m</td>
+            <td class="bestPrice"><a href = "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=Wa3rESSDeivD%2bgLXwmvBVxMjrxY4fRDbWgPSM81Xhyg%2b26qU8rMuHA%2bq9cLv1kvW&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fUK%2fen-GB%2fGBP%2fat24%2f1%2f9772.13880.2019-01-06%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32332%7c5923%7c9772%7c2019-01-06T15%3a35%7c17517%7c2019-01-06T18%3a05%7c150%7c-%7c-%7c-%3bflight%7c-32544%7c463%7c17517%7c2019-01-07T10%3a15%7c13880%7c2019-01-07T11%3a55%7c160%7c-%7c-%7c-%26carriers%3d-32332%2c-32544%26operators%3d-31112%3b-32544%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d320.05%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26deeplink_ids%3deu-central-1.prod_bc9d5944ca7eda5f61dd68871c601c00%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-10-20T19%3a05%3a00">320.05</td>
+          </tr>
+          <tr>
+            <td class="departFrom">Manchester</td>
+            <td class="departureAt">2019-01-06T15:35:00</td>
+            <td class="arrivalAt">Barcelona</td>
+            <td class="arrivalDate">2019-01-07T11:55:00</td>
+            <td class="layoverAt">Vienna</td>
+            <td class="layoverLength">16h 10m</td>
+            <td class="bestPrice"><a href =
+            "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=Wa3rESSDeivD%2bgLXwmvBVxMjrxY4fRDbWgPSM81Xhyg%2b26qU8rMuHA%2bq9cLv1kvW&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fUK%2fen-GB%2fGBP%2ftguk%2f1%2f9772.13880.2019-01-06%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32544%7c8850%7c9772%7c2019-01-06T15%3a35%7c17517%7c2019-01-06T18%3a05%7c150%7c-%7c-%7c-%3bflight%7c-32544%7c463%7c17517%7c2019-01-07T10%3a15%7c13880%7c2019-01-07T11%3a55%7c160%7c-%7c-%7c-%26carriers%3d-32544%26operators%3d-31112%3b-32544%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d320.93%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26deeplink_ids%3deu-central-1.prod_58275338a135e081f20ce205708d5b54%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-10-20T19%3a05%3a00">320.93</td>
+          </tr>
+          <tr>
+            <td class="departFrom">Manchester</td>
+            <td class="departureAt">2019-01-06T21:20:00</td>
+            <td class="arrivalAt">Barcelona</td>
+            <td class="arrivalDate">2019-01-07T21:35:00</td>
+            <td class="layoverAt">Brussels International</td>
+            <td class="layoverLength">21h 45m</td>
+            <td class="bestPrice"><a href = "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=Wa3rESSDeivD%2bgLXwmvBVxMjrxY4fRDbWgPSM81Xhyg%2b26qU8rMuHA%2bq9cLv1kvW&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fUK%2fen-GB%2fGBP%2fgtuk%2f1%2f9772.13880.2019-01-06%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32478%7c3706%7c9772%7c2019-01-06T21%3a20%7c10141%7c2019-01-06T23%3a25%7c125%7c-%7c-%7c-%3bflight%7c-32478%7c2183%7c10141%7c2019-01-07T21%3a15%7c13880%7c2019-01-07T21%3a35%7c80%7c-%7c-%7c-%26carriers%3d-32478%26operators%3d-32478%3b-32478%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d139.99%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26deeplink_ids%3deu-central-1.prod_1c059e8845adf29d83574bc06822c0ed%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-10-20T19%3a05%3a00s">139.99</td>
+          </tr>
+          <tr>
+            <td class="departFrom">Manchester</td>
+            <td class="departureAt">2019-01-06T15:15:00</td>
+            <td class="arrivalAt">Barcelona</td>
+            <td class="arrivalDate">2019-01-07T09:25:00</td>
+            <td class="layoverAt">Stockholm Arlanda</td>
+            <td class="layoverLength">13h</td>
+            <td class="bestPrice"><a href = "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=Wa3rESSDeivD%2bgLXwmvBVxMjrxY4fRDbWgPSM81Xhyg%2b26qU8rMuHA%2bq9cLv1kvW&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fUK%2fen-GB%2fGBP%2fgtuk%2f1%2f9772.13880.2019-01-06%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32013%7c5554%7c9772%7c2019-01-06T15%3a15%7c9547%7c2019-01-06T19%3a00%7c225%7c-%7c-%7c-%3bflight%7c-32013%7c4479%7c9547%7c2019-01-07T08%3a00%7c13880%7c2019-01-07T09%3a25%7c145%7c-%7c-%7c-%26carriers%3d-32013%26operators%3d-31303%3b-32013%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d172.87%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26deeplink_ids%3deu-central-1.prod_18ce979db8ecff78dd18d6b7c9f86bc4%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-10-20T19%3a05%3a00">172.87</td>
+          </tr>
+          <tr>
+            <td class="departFrom">Manchester</td>
+            <td class="departureAt">2019-01-06T10:15:00</td>
+            <td class="arrivalAt">Barcelona</td>
+            <td class="arrivalDate">2019-01-07T09:15:00</td>
+            <td class="layoverAt">Helsinki Vantaa</td>
+            <td class="layoverLength">17h 5m</td>
+            <td class="bestPrice"><a href = "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=Wa3rESSDeivD%2bgLXwmvBVxMjrxY4fRDbWgPSM81Xhyg%2b26qU8rMuHA%2bq9cLv1kvW&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fUK%2fen-GB%2fGBP%2fgtuk%2f1%2f9772.13880.2019-01-06%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32317%7c1654%7c9772%7c2019-01-06T10%3a15%7c12126%7c2019-01-06T15%3a10%7c235%7c-%7c-%7c-%3bflight%7c-32317%7c1361%7c12126%7c2019-01-07T08%3a15%7c13880%7c2019-01-07T09%3a15%7c180%7c-%7c-%7c-%26carriers%3d-32317%26operators%3d-32317%3b-32317%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d419.98%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26deeplink_ids%3deu-central-1.prod_ed5ac9c2039f441ae905e88d78282d71%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-10-20T19%3a05%3a00">419.98</td>
+          </tr>
+          <tr>
+            <td class="departFrom">Manchester</td>
+            <td class="departureAt">2019-01-06T19:55:00</td>
+            <td class="arrivalAt">Barcelona</td>
+            <td class="arrivalDate">2019-01-07T08:00:00</td>
+            <td class="layoverAt">Zurich</td>
+            <td class="layoverLength">9h 25m</td>
+            <td class="bestPrice"><a href = "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=Wa3rESSDeivD%2bgLXwmvBVxMjrxY4fRDbWgPSM81Xhyg%2b26qU8rMuHA%2bq9cLv1kvW&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fUK%2fen-GB%2fGBP%2fat24%2f1%2f9772.13880.2019-01-06%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-31799%7c1957%7c9772%7c2019-01-06T19%3a55%7c18563%7c2019-01-06T21%3a45%7c110%7c-%7c-%7c-%3bflight%7c-31799%7c390%7c18563%7c2019-01-07T06%3a55%7c13880%7c2019-01-07T08%3a00%7c125%7c-%7c-%7c-%26carriers%3d-31799%26operators%3d-31799%3b-31799%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d267.16%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26deeplink_ids%3deu-central-1.prod_a462a5b7f63eae70e809fd0d48e2c93b%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-10-20T19%3a05%3a00">267.16</td>
+          </tr>
+          <tr>
+            <td class="departFrom">Manchester</td>
+            <td class="departureAt">2019-01-06T17:50:00</td>
+            <td class="arrivalAt">Barcelona</td>
+            <td class="arrivalDate">2019-01-07T07:55:00</td>
+            <td class="layoverAt">Paris Charles de Gaulle</td>
+            <td class="layoverLength">12h</td>
+            <td class="bestPrice"><a href = "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=Wa3rESSDeivD%2bgLXwmvBVxMjrxY4fRDbWgPSM81Xhyg%2b26qU8rMuHA%2bq9cLv1kvW&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fUK%2fen-GB%2fGBP%2fgtuk%2f1%2f9772.13880.2019-01-06%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32139%7c3163%7c9772%7c2019-01-06T17%3a50%7c10413%7c2019-01-06T19%3a50%7c120%7c-%7c-%7c-%3bflight%7c-32677%7c1668%7c10413%7c2019-01-07T07%3a20%7c13880%7c2019-01-07T07%3a55%7c95%7c-%7c-%7c-%26carriers%3d-32139%2c-32677%26operators%3d-31018%3b-32677%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d995.03%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26deeplink_ids%3deu-central-1.prod_50e4dc199f2ad50a617a452bde9a525a%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-10-20T19%3a05%3a00">995.03</td>
+          </tr>
+          <tr>
+            <td class="departFrom">Manchester</td>
+            <td class="departureAt">2019-01-06T19:55:00</td>
+            <td class="arrivalAt">Barcelona</td>
+            <td class="arrivalDate">2019-01-07T08:20:00</td>
+            <td class="layoverAt">Amsterdam</td>
+            <td class="layoverLength">9h 20m</td>
+            <td class="bestPrice"><a href = "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=Wa3rESSDeivD%2bgLXwmvBVxMjrxY4fRDbWgPSM81Xhyg%2b26qU8rMuHA%2bq9cLv1kvW&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fUK%2fen-GB%2fGBP%2febuk%2f1%2f9772.13880.2019-01-06%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32132%7c1676%7c9772%7c2019-01-06T19%3a55%7c9451%7c2019-01-06T22%3a15%7c140%7cHWKWES%7cH%7c-%3bflight%7c-32132%7c1073%7c9451%7c2019-01-07T08%3a00%7c13880%7c2019-01-07T08%3a20%7c80%7cHWKWES%7cH%7c-%26carriers%3d-32132%26operators%3d-32132%3b-32132%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d148.50%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26deeplink_ids%3deu-central-1.prod_3331e7a075a76603ba197fc1c810a586%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-10-20T19%3a05%3a00">148.5</td>
+          </tr>
+          <tr>
+            <td class="departFrom">Manchester</td>
+            <td class="departureAt">2019-01-06T21:35:00</td>
+            <td class="arrivalAt">Barcelona</td>
+            <td class="arrivalDate">2019-01-08T06:00:00</td>
+            <td class="layoverAt">Hamad International</td>
+            <td class="layoverLength">19h 15m</td>
+            <td class="bestPrice"><a href = "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=Wa3rESSDeivD%2bgLXwmvBVxMjrxY4fRDbWgPSM81Xhyg%2b26qU8rMuHA%2bq9cLv1kvW&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fUK%2fen-GB%2fGBP%2fgtuk%2f1%2f9772.13880.2019-01-06%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-31939%7c142%7c9772%7c2019-01-06T21%3a35%7c11089%7c2019-01-07T05%3a55%7c380%7c-%7c-%7c-%3bflight%7c-31939%7c21%7c11089%7c2019-01-08T01%3a15%7c13880%7c2019-01-08T06%3a00%7c465%7c-%7c-%7c-%26carriers%3d-31939%26operators%3d-31939%3b-31939%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d766.74%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26deeplink_ids%3deu-central-1.prod_d8257fd12ca8637f8cd99a06ae0b239a%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-10-20T19%3a05%3a00">766.74</td>
+          </tr>
+          <tr>
+            <td class="departFrom">Manchester</td>
+            <td class="departureAt">2019-01-06T20:20:00</td>
+            <td class="arrivalAt">Barcelona</td>
+            <td class="arrivalDate">2019-01-07T16:20:00</td>
+            <td class="layoverAt">London Gatwick</td>
+            <td class="layoverLength">17h 45m</td>
+            <td class="bestPrice"><a href = "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=Wa3rESSDeivD%2bgLXwmvBVxMjrxY4fRDbWgPSM81Xhyg%2b26qU8rMuHA%2bq9cLv1kvW&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fUK%2fen-GB%2fGBP%2ftguk%2f1%2f9772.13880.2019-01-06%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32222%7c7642%7c9772%7c2019-01-06T20%3a20%7c13542%7c2019-01-06T21%3a40%7c140%7c-%7c-%7c-%3bflight%7c-32222%7c7559%7c13554%7c2019-01-07T15%3a15%7c13880%7c2019-01-07T16%3a20%7c65%7c-%7c-%7c-%26carriers%3d-32222%26operators%3d-32480%3b-32480%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d362.10%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26deeplink_ids%3deu-central-1.prod_ee758abc3e57e7e57d0dead2c4ea79f5%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-10-20T19%3a05%3a00">362.1</td>
+          </tr>
+          <tr>
+            <td class="departFrom">Manchester</td>
+            <td class="departureAt">2019-01-06T12:35:00</td>
+            <td class="arrivalAt">Barcelona</td>
+            <td class="arrivalDate">2019-01-07T10:10:00</td>
+            <td class="layoverAt">Lisbon</td>
+            <td class="layoverLength">17h 50m</td>
+            <td class="bestPrice"><a href = "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=Wa3rESSDeivD%2bgLXwmvBVxMjrxY4fRDbWgPSM81Xhyg%2b26qU8rMuHA%2bq9cLv1kvW&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fUK%2fen-GB%2fGBP%2ftap_%2f1%2f9772.13880.2019-01-06%2fair%2fairli%2fflights%3fitinerary%3dflight%7c-31781%7c1035%7c9772%7c2019-01-06T12%3a35%7c13577%7c2019-01-06T13%3a30%7c115%7cL04DSC0B%7cL%7cDiscount%3bflight%7c-31781%7c1372%7c13577%7c2019-01-07T07%3a10%7c13880%7c2019-01-07T10%3a10%7c180%7cL02DSC0A%7cL%7cDiscount%26carriers%3d-31781%26operators%3d-31953%3b-31781%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d136.20%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-10-20T19%3a05%3a00">136.2</td>
+          </tr>
+          <tr>
+            <td class="departFrom">Manchester</td>
+            <td class="departureAt">2019-01-06T21:20:00</td>
+            <td class="arrivalAt">Barcelona</td>
+            <td class="arrivalDate">2019-01-07T10:20:00</td>
+            <td class="layoverAt">Brussels International</td>
+            <td class="layoverLength">10h 30m</td>
+            <td class="bestPrice"><a href = "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=Wa3rESSDeivD%2bgLXwmvBVxMjrxY4fRDbWgPSM81Xhyg%2b26qU8rMuHA%2bq9cLv1kvW&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fUK%2fen-GB%2fGBP%2fgtuk%2f1%2f9772.13880.2019-01-06%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32478%7c3706%7c9772%7c2019-01-06T21%3a20%7c10141%7c2019-01-06T23%3a25%7c125%7c-%7c-%7c-%3bflight%7c-32478%7c2173%7c10141%7c2019-01-07T09%3a55%7c13880%7c2019-01-07T10%3a20%7c85%7c-%7c-%7c-%26carriers%3d-32478%26operators%3d-32478%3b-32478%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d211.39%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26deeplink_ids%3deu-central-1.prod_dd547b7636e12040f2a703bbf725d0f4%26commercial_filters%3dfalse%26q_datetime_utc%3d2018-10-20T19%3a05%3a00">211.39</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
-  </body>
+
+<!-- follow me template -->
+<div class="made-with-love">
+  Made with
+  <i>♥</i> by
+  <a target="_blank" href="https://codepen.io/nikhil8krishnan">Nikhil Krishnan</a>
+</div>
 
 </html>
