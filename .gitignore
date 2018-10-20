@@ -1,3 +1,5 @@
 venv
 *.DS_Store
 *.pyc
+src/flight/poll.py
+src/flight/trippricing.py
