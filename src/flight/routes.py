@@ -7,8 +7,8 @@ import requests
 url = "http://partners.api.skyscanner.net/apiservices/"
 
 @app.route('/', methods=['GET'])
-def index():
-    return jsonify({ 'hello': 'world' })
+def index(path):
+    return app.send_from_directory('static', path)
 
 @app.route('/flight/<country>/<currency>/<locale>/<originPlace>/<destinationPlace>/<inboundDate>', methods=['GET'])
 @app.route('/flight/<country>/<currency>/<locale>/<originPlace>/<destinationPlace>/<outboundDate>/<inboundDate>', methods=['GET'])
@@ -40,3 +40,4 @@ def get_suggestions(country, currency, locale, query, api):
 	suggestJSON = json.loads(suggest.text)
 	print(suggestJSON)
 	return [{'PlaceId':x['PlaceId'],'PlaceName':x['PlaceName']} for x in suggestJSON['Places']]
+

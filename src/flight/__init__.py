@@ -2,7 +2,7 @@ from flask import Flask, render_template
 import os
 
 # App instance
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
 app.config.from_object('config.Config')
 
 @app.errorhandler(404)

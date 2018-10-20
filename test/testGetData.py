@@ -10,4 +10,6 @@ noOfPassengers = 1
 noOfChildren = 0
 noOfInfants = 0
 
-print(getData(departFrom, arriveAt, flyOn, noOfPassengers, noOfChildren, noOfInfants, cabinClass))
+minLayover = 500
+
+print(getData(departFrom, arriveAt, flyOn, noOfPassengers, noOfChildren, noOfInfants, cabinClass, minLayover))
