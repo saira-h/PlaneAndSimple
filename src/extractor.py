@@ -1,7 +1,12 @@
 import socket
-import requests
+import time
+from time import strptime
 
-def getData(departFrom, arriveAt, flyOn, noOfPassengers, noOfChildren, noOfInfants, cabinClass):
+import requests
+from datetime import datetime, timedelta
+
+
+def getData(departFrom, arriveAt, flyOn, noOfPassengers, noOfChildren, noOfInfants, cabinClass, minLayover):
     payload = {"country": "UK",
                "currency": "GBP",
                "locale": "en-GB",
@@ -29,4 +34,40 @@ def getData(departFrom, arriveAt, flyOn, noOfPassengers, noOfChildren, noOfInfan
         if r.json().get("Status") != "UpdatesPending":
             break
 
-    return r.json()
+    return filterResults(r.json(), minLayover)
+
+
+def filterResults(json, minLayover):
+    segmentIDs = []
+    legs = json.get("Legs")
+    for leg in legs:
+        if len(leg.get("SegmentIds")) == 2:
+            segmentIDs.append([leg.get("SegmentIds"), leg.get("Id")])
+
+    segments = json.get("Segments")
+    journeys = []
+
+    for journey in segmentIDs:
+        bothFlights = []
+        for segment in segments:
+            if segment.get("Id") == journey[0][0]:
+                bothFlights.append(segment)
+            if segment.get("Id") == journey[0][1]:
+                bothFlights.append(segment)
+        journeys.append([bothFlights, journey[1]])
+
+    applicableLegID = []
+    for trip in journeys:
+        arrival = strptime(trip[0][0].get("ArrivalDateTime"), "%Y-%m-%dT%X")
+        departure = strptime(trip[0][1].get("DepartureDateTime"), "%Y-%m-%dT%X")
+
+        if time.localtime(time.mktime(arrival) + minLayover*60) < departure:
+            applicableLegID.append(trip[1])
+
+    applicableItineraries = []
+    for id in applicableLegID:
+        for itinerary in json.get("Itineraries"):
+            if itinerary.get("OutboundLegId") == id:
+                applicableItineraries.append(itinerary)
+
+    print(applicableItineraries)
