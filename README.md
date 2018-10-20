@@ -66,5 +66,17 @@ Here is the file structure of the directory `./src`
 
 ## API
 
+Get Request
+
+```
+http://partners.api.skyscanner.net/apiservices/browseroutes/v1.0/UK/GBP/en-GG/BCN-sky/MAN-sky/2018-11-21/2018-11-21?apiKey=ha158486926168541326868639329158
+```
+
+
+GET Suggest 
+
+```
+http://0.0.0.0:5000/suggest/{country}/{currency}/{locale}?query={query}&apiKey={apiKey}
+```
 
 
