@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "6059e511-a878-4c99-8eab-442a8bf9fb29",
+		"name": "Skyscanner API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Browse Routes Barcelona to Manchester on Sunday",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://partners.api.skyscanner.net/apiservices/browseroutes/v1.0/UK/GBP/en-GG/BCN-sky/MAN-sky/2018-11-21/2018-11-21?apiKey=ha158486926168541326868639329158",
+					"protocol": "http",
+					"host": [
+						"partners",
+						"api",
+						"skyscanner",
+						"net"
+					],
+					"path": [
+						"apiservices",
+						"browseroutes",
+						"v1.0",
+						"UK",
+						"GBP",
+						"en-GG",
+						"BCN-sky",
+						"MAN-sky",
+						"2018-11-21",
+						"2018-11-21"
+					],
+					"query": [
+						{
+							"key": "apiKey",
+							"value": "ha158486926168541326868639329158"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get locales",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://partners.api.skyscanner.net/apiservices/reference/v1.0/locales?apiKey={apiKey}\"",
+					"protocol": "http",
+					"host": [
+						"partners",
+						"api",
+						"skyscanner",
+						"net"
+					],
+					"path": [
+						"apiservices",
+						"reference",
+						"v1.0",
+						"locales"
+					],
+					"query": [
+						{
+							"key": "apiKey",
+							"value": "{apiKey}\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get currencies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://partners.api.skyscanner.net/apiservices/reference/v1.0/currencies?apiKey=ha158486926168541326868639329158",
+					"protocol": "http",
+					"host": [
+						"partners",
+						"api",
+						"skyscanner",
+						"net"
+					],
+					"path": [
+						"apiservices",
+						"reference",
+						"v1.0",
+						"currencies"
+					],
+					"query": [
+						{
+							"key": "apiKey",
+							"value": "ha158486926168541326868639329158"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Countries for GB locale",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://partners.api.skyscanner.net/apiservices/reference/v1.0/countries/en-GG?apiKey=ha158486926168541326868639329158",
+					"protocol": "http",
+					"host": [
+						"partners",
+						"api",
+						"skyscanner",
+						"net"
+					],
+					"path": [
+						"apiservices",
+						"reference",
+						"v1.0",
+						"countries",
+						"en-GG"
+					],
+					"query": [
+						{
+							"key": "apiKey",
+							"value": "ha158486926168541326868639329158"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Manchester Airport",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://partners.api.skyscanner.net/apiservices/autosuggest/v1.0/UK/GBP/en-GG?query=barcelona&apiKey=ha158486926168541326868639329158",
+					"protocol": "http",
+					"host": [
+						"partners",
+						"api",
+						"skyscanner",
+						"net"
+					],
+					"path": [
+						"apiservices",
+						"autosuggest",
+						"v1.0",
+						"UK",
+						"GBP",
+						"en-GG"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "barcelona"
+						},
+						{
+							"key": "apiKey",
+							"value": "ha158486926168541326868639329158"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Barcelona Airport",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://partners.api.skyscanner.net/apiservices/autosuggest/v1.0/UK/GBP/en-GG?query=barcelona&apiKey=ha158486926168541326868639329158",
+					"protocol": "http",
+					"host": [
+						"partners",
+						"api",
+						"skyscanner",
+						"net"
+					],
+					"path": [
+						"apiservices",
+						"autosuggest",
+						"v1.0",
+						"UK",
+						"GBP",
+						"en-GG"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "barcelona"
+						},
+						{
+							"key": "apiKey",
+							"value": "ha158486926168541326868639329158"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
