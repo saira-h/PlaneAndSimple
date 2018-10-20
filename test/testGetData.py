@@ -4,7 +4,7 @@ departFrom = "BCN-sky"
 arriveAt = "MAN-sky"
 cabinClass = "Economy"
 
-flyOn = "2018-11-02"
+flyOn = "2019-01-06"
 
 noOfPassengers = 1
 noOfChildren = 0
