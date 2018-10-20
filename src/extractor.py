@@ -23,6 +23,7 @@ def getData(departFrom, arriveAt, flyOn, noOfPassengers, noOfChildren, noOfInfan
 
     head = {"Content-Type": "application/x-www-form-urlencoded",
             "X-Forwarded-For": socket.gethostbyname(socket.gethostname()),
+            # "X-Forwarded-For": socket.gethostbyname(""),
             "Accept": "application/json"}
 
     createSession = requests.post("http://partners.api.skyscanner.net/apiservices/pricing/v1.0",
@@ -103,3 +104,4 @@ def filterResults(json, minLayover):
     retunMap["flightsInfo"] = flightsInfo
 
     return retunMap
+

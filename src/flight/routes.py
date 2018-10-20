@@ -1,8 +1,10 @@
 from flask import jsonify, request, abort, Response
 from flight import app
+from extractor import getData, filterResults
 from datetime import datetime
 import json
 import requests
+from weather import getWeather
 
 url = "http://partners.api.skyscanner.net/apiservices/"
 
@@ -14,13 +16,34 @@ def index(path):
 @app.route('/flight/<country>/<currency>/<locale>/<originPlace>/<destinationPlace>/<outboundDate>/<inboundDate>', methods=['GET'])
 def flight(country, currency, locale, originPlace, destinationPlace, inboundDate, outboundDate = None):
     if request.args:
-    	api = request.args.get('api')
-    	adults = request.args.get('adults')
-    	children = request.args.get('children')
-    	infants = request.args.get('infants')
-    	includeCarriers = request.args.get('includeCarriers')
-    	excludeCarriers = request.args.get('excludeCarriers')
-    	groupPricing = request.args.get('groupPricing')
+        api = request.args.get('apiKey')
+        if not api:
+            return jsonify({ 'error': 'Missing API Key' })
+        adults = request.args.get('adults')
+        if not adults:
+            return jsonify({ 'error': 'Missing Adults attributes' })
+        children = request.args.get('children')
+        if not children or 0 <= int(children) >= 16:
+            return jsonify({ 'error': 'Incorrect children attributes' })
+        infants = request.args.get('infants')
+        if not infants or 0 <= int(infants) >= 16:
+            return jsonify({ 'error': 'Incorrect infants attributes' })
+        # The cabin class. Can be “economy”, “premiumeconomy”, “business”, “first”
+        cabinClass = request.args.get('cabinClass')
+        if not cabinClass or cabinClass.lower() not in ['economy', "premiumeconomy", "business", "first"]:
+            return jsonify({ 'error': 'Incorrect cabinClass attributes' })
+        minLayover = request.args.get('minLayover')
+        if not minLayover or int(minLayover) < 0:
+            return jsonify({ 'error': 'Incorrect minLayover attributes' })
+        includeCarriers = request.args.get('includeCarriers')
+        excludeCarriers = request.args.get('excludeCarriers')
+        groupPricing = request.args.get('groupPricing')
+        data = getData(originPlace,destinationPlace,inboundDate,int(adults),int(children),int(infants),cabinClass,int(minLayover))
+        return jsonify(data)
+
+@app.route('/weather/<airport>/<date>', methods=['GET'])
+def weather(date, airport):
+	return jsonify(getWeather(date, airport))
 
 
 @app.route('/suggest/<country>/<currency>/<locale>', methods=['GET'])
