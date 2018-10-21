@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src={{ url_for('static',filename='js/results.js') }}></script>
+
+    <title>InterPlane</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href= {{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css') }} rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href= {{ url_for('static',filename='vendor/fontawesome-free/css/all.min.css') }} rel="stylesheet">
+    <link href={{ url_for('static',filename='vendor/simple-line-icons/css/simple-line-icons.css') }} rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href={{ url_for('static',filename='/css/landing-page.min.css') }} rel="stylesheet">
+
+
+    <header class="masthead text-white text-center" style="margin-top: -80px;height:100px">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+
+            <h1 class="mb-5">Layovers</h1>
+          </div>
+        </div>
+      </div>
+    </header>
+<LINK rel=stylesheet type "text/css" href={{ url_for('static',filename='result2css.css') }}>
+  </head>
+
+  <section>
+  <!--for demo wrap-->
+  <h1>Fixed Table header</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table>
+      <thead>
+        <tr class="table100-head">
+          <th class="departFrom">Depart from</th>
+          <th class="departureDate">Departure date</th>
+          <th class="arrivalAt">Arriving to</th>
+          <th class="arrivalDate">Arrival Date</th>
+          <th class="layoverAt">Layover destination</th>
+          <th class="layoverLength">Length of layover (hours)</th>
+          <th class="bestPrice">Price of ticket (£)</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for flight in flights.get('flightsInfo') %}
+          <tr>
+            <td class="departFrom">{{ flights.get('departFrom') }}</td>
+            <td class="departureDate">{{ flight.get('departureDate') }}</td>
+            <td class="arrivalAt">{{ flights.get('arriveAt') }}</td>
+            <td class="arrivalDate">{{ flight.get('arrivalDate') }}</td>
+            <td class="layoverAt">{{ flight.get('layoverAt') }}</td>
+            <td class="layoverLength"> {{ flight.get('layoverLength') }} </td>
+            <td class="bestPrice"><a href ={{ flight.get('deeplinkUrl') }}>{{ flight.get('bestPrice') }}</td>
+          </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+
+</html>

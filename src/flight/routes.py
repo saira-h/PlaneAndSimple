@@ -1,4 +1,4 @@
-from flask import jsonify, request, abort, Response
+from flask import jsonify, request, abort, Response, render_template
 from flight import app
 from extractor import getData, filterResults
 from datetime import datetime
@@ -39,7 +39,8 @@ def flight(country, currency, locale, originPlace, destinationPlace, inboundDate
         excludeCarriers = request.args.get('excludeCarriers')
         groupPricing = request.args.get('groupPricing')
         data = getData(originPlace,destinationPlace,inboundDate,int(adults),int(children),int(infants),cabinClass,int(minLayover))
-        return jsonify(data)
+        # return jsonify(data)
+        return render_template('index.html', flights=data)
 
 @app.route('/<originPlace>/<inboundDate>/<destinationPlace>/<layover>/<adults>/<children>/<infants>/<cabinClass>', methods=['GET'])
 def fly(originPlace, inboundDate, destinationPlace, layover, adults, children, infants, cabinClass):
