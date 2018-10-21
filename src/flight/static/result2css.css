@@ -13,24 +13,24 @@ table{
 }
 
 .tbl-content{
-  height:400px;
+  height:auto;
   overflow-x:auto;
   margin-top: -40px;
 }
 th{
-  padding: 30px;
+  padding: 20px;
   text-align: centre;
   vertical-align:middle;
   font-weight: 500;
-  font-size: 28px;
+  font-size: 25px;
   text-transform: uppercase;
 }
 td{
-  padding: 40px;
+  padding: 30px;
   text-align: centre;
   vertical-align:middle;
-  font-weight: 300;
-  font-size: 23px;
+  font-weight: 30;
+  font-size: 20px;
 
 }
 
